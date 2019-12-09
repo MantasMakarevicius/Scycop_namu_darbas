@@ -38,11 +38,8 @@ class readACSVFile extends Command
     public function handle()
     {
       $fileName = $this->argument('fileName');
-      //
-      // echo "hi, $fileName. You know maybe we'll do it...somehow...";
-
+      
       $file_handle = fopen("$fileName.csv", "r");
-      // echo "file name is: $file_handle\n";
 
       $EU = [
              'BE','EL','LT','PT','BG','ES','LU',
@@ -55,36 +52,36 @@ class readACSVFile extends Command
 
         $line_of_text = fgetcsv($file_handle, 100);
 
-        // print $line_of_text[0] . $line_of_text[1]. $line_of_text[2] . "\n";
         $country = $line_of_text[0];
         $status = substr($line_of_text[1], 1, strlen($line_of_text[1])+1);
         $status_details = $line_of_text[2];
 
-        $string = $line_of_text[0] . $line_of_text[1]. $line_of_text[2];
+        $result = $line_of_text[0] . $line_of_text[1]. $line_of_text[2];
 
         if(in_array($country, $EU) == 1){
 
           if($status == "Cancel"){
 
             if(intval($status_details) <= 14){
-              $string = $string . " Y";
+              $result = $result . " Y";
             }else{
-              $string = $string . " N";
+              $result = $result . " N";
             }
+
           }elseif($status === "Delay"){
 
             if(intval($status_details) >= 3){
-              $string = $string . " Y";
+              $result = $result . " Y";
             }else{
-              $string = $string . " N";
+              $result = $result . " N";
             }
 
           }
         }else{
-          $string = $string . " N";
+          $result = $result . " N";
         }
 
-        print "\n" . $string;
+        print "\n" . $result;
 
       }
 
