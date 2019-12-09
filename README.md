@@ -35,6 +35,8 @@ public function handle()
         $status_details = $line_of_text[2];
 
         $result = $line_of_text[0] . $line_of_text[1]. $line_of_text[2];
+        
+        // Decision table:
 
         if(in_array($country, $EU) == 1){
 
