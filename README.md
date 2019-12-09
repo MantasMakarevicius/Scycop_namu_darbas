@@ -8,7 +8,7 @@ After cloning the repository, In the console navigate to the SC folder. Run comm
 
   php artisan csv:read test
 
-where test is the name of the file with the example data.
+where 'test' is the name of the file with the example data.
 The data from task.csv file will be read and a decision table will be applied in the ReadACSVFile.php file.
 
 The main code:
