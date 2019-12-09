@@ -4,7 +4,7 @@ Manto Makarevičiaus Scycop praktinė namų darbų užduotis
 Console command was created using Artisan which is the command-line interface included with Laravel framework.
 Artisan command 'make:command' was used to create a new command class called 'ReadACSVFile' which is located in SC/app/Console/Commands folder.
 
-Navigate to the SC folder and to the console enter:
+In the console navigate to the SC folder. Runn command 'composer install' and enter command:
   php artisan csv:read test
 
 where test is the name of the file with the example data.
@@ -15,7 +15,7 @@ The main code:
 public function handle()
     {
       $fileName = $this->argument('fileName');
-      
+   
       $file_handle = fopen("$fileName.csv", "r");
 
       $EU = [
