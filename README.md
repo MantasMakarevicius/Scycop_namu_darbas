@@ -1,5 +1,5 @@
-# Scycop_namu_darbas
-Manto Makarevičiaus Scycop praktinė namų darbų užduotis
+# Scycop_home_task
+Manto Makarevičiaus Scycop home task.
 
 Console command was created using Artisan which is the command-line interface included with Laravel framework.
 Artisan command 'make:command' was used to create a new command class called 'ReadACSVFile' which is located in SC/app/Console/Commands folder.
