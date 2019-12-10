@@ -53,7 +53,7 @@ class readACSVFile extends Command
         $line_of_text = fgetcsv($file_handle, 100);
 
         $country = $line_of_text[0];
-        $status = substr($line_of_text[1], 1, strlen($line_of_text[1])+1);
+        $status = substr($line_of_text[1], 1);
         $status_details = $line_of_text[2];
 
         $result = $line_of_text[0] . $line_of_text[1]. $line_of_text[2];
