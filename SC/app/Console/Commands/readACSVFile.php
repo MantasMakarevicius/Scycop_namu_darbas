@@ -58,26 +58,26 @@ class readACSVFile extends Command
 
         $result = $line_of_text[0] . $line_of_text[1]. $line_of_text[2];
 
-        if(in_array($country, $EU) == 1){
+        if(in_array($country, $EU)){
 
           if($status == "Cancel"){
 
             if(intval($status_details) <= 14){
               $result = $result . " Y";
-            }else{
+            } else{
               $result = $result . " N";
             }
 
-          }elseif($status === "Delay"){
+          } elseif($status == "Delay"){
 
             if(intval($status_details) >= 3){
               $result = $result . " Y";
-            }else{
+            } else{
               $result = $result . " N";
             }
 
           }
-        }else{
+        } else{
           $result = $result . " N";
         }
 
