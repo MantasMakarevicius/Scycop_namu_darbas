@@ -68,7 +68,7 @@ class readACSVFile extends Command
               $result = $result . " N";
             }
 
-          } elseif($status == "Delay"){
+          } else if($status == "Delay"){
 
             if(intval($status_details) >= 3){
               $result = $result . " Y";
